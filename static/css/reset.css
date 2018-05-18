@@ -95,4 +95,60 @@ textarea,
 option,
 button{
   font-family: "Microsoft YaHei";
+<<<<<<< HEAD
 }
+=======
+}
+
+/*====================================================
+03. Media Mobile
+====================================================*/
+/* html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  font-size: 2.667vw;
+}
+
+@media only screen and (min-width:320px) {
+  html {
+    font-size: 53.3% !important;
+  }
+}
+
+@media only screen and (min-width:360px) {
+  html {
+    font-size: 60% !important;
+  }
+}
+
+@media only screen and (min-width:375px) {
+  html {
+    font-size: 62.5% !important;
+  }
+}
+
+@media only screen and (min-width:414px) {
+  html {
+    font-size: 69% !important;
+  }
+}
+
+@media only screen and (min-width:481px) {
+  html {
+    font-size: 80% !important;
+  }
+}
+
+@media only screen and (min-width:561px) {
+  html {
+    font-size: 93.5% !important;
+  }
+}
+
+@media only screen and (min-width:641px) {
+  html {
+    font-size: 106.8% !important;
+  }
+} */
+>>>>>>> ddf8f93690e1ad734e9eef3256becec8b2669b11
