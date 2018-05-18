@@ -1,6 +1,7 @@
 'use strict'
 const path = require('path')
 const config = require('../config');
+const vendor = require('../config/vendor');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const packageConfig = require('../package.json')
 const SpritesmithPlugin = require('webpack-spritesmith');
@@ -36,14 +37,16 @@ exports.cssLoaders = function (options) {
 
   const px2remLoader = {
     loader: 'px2rem-loader',
-    options: {
-      remUnit: 20
-    }
+    options: options.px2remOption
   }
 
   // generate loader string to be used with extract text plugin
   function generateLoaders(loader, loaderOptions) {
-    const loaders = options.usePostCSS ? [cssLoader, postcssLoader, px2remLoader] : [cssLoader]
+    const loaders = options.usePostCSS ? [cssLoader, postcssLoader] : [cssLoader]
+
+    if (options.px2remOption) {
+      loaders.push(px2remLoader);
+    }
 
     if (loader) {
       loaders.push({
@@ -117,9 +120,7 @@ exports.createNotifierCallback = () => {
 // 多入口配置
 exports.entries = () => {
   let entryFiles = glob.sync(config.common.pagePath + '/*/*.js');
-  let map = {
-    vendor: ['vue', 'vue-resource'],
-  };
+  let map = Object.assign({}, vendor.files);
   entryFiles.forEach(filePath => {
     map[path.basename(path.dirname(filePath))] = filePath;
   })
@@ -132,13 +133,18 @@ exports.exits = (conf) => {
   return entryHtml.map(filePath => {
     let filename = path.basename(path.dirname(filePath));
     return Object.assign({
-      title: config.common.pageTitle[filename] || '3k游戏',
+      title: vendor.pages[filename] || '3k游戏',
       // 模板来源
       template: config.common.pagePath + '/index.html',
       // 文件名称
       filename: filename + '.html',
       // 页面模板需要加对应的js脚本，如果不加这行则每个页面都会引入所有的js脚本
-      chunks: ['manifest', 'vendor', filename]
+      chunks: [
+        'manifest',
+        'vendor',
+        filename,
+        ...(vendor.pages[filename] && vendor.pages[filename].vendor || [])
+      ]
     }, conf);
   });
 }
@@ -176,7 +182,8 @@ exports.clearfiles = function (matchs = []) {
   ]
   return new CleanWebpackPlugin(matchs, {
     root: path.resolve(__dirname, '..'), //根目录
-    verbose: false,//开启在控制台输出信息
-    dry: false,　　　//启用删除文件　　　　　　　 
+    verbose: false, //开启在控制台输出信息
+    dry: false,
+    　　　 //启用删除文件　　　　　　　 
   });
 }

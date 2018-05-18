@@ -6,8 +6,10 @@ const path = require('path');
 
 module.exports = {
   common:{
-    // 页面标题
-    pageTitle: require('./title'),
+    /**px2remOption: {
+      //px转rem
+      remUnit: 20 //750px->37.5rem
+    },*/
     // 页面路径
     pagePath: path.resolve(__dirname, '../src/pages'),
     // 雪碧图路径

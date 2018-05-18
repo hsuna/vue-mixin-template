@@ -7,6 +7,10 @@
         <el-button type="primary" @click="toPageByName('single_page')">跳转到单页面</el-button>
         <el-button type="primary" @click="toPageByName('multiple_page')">跳转到多页面</el-button>
     </el-row>
+    <el-row>
+      <i class="icon icon-success"></i>
+      <i class="icon icon-error"></i>
+    </el-row>
   </div>
 </template>
 
@@ -25,6 +29,11 @@ export default {
 </script>
 
 <style lang="scss">
+@import 'assets/styles/sprites/_sp-message.scss';
+@include sprites(($icon-error, $icon-success));
+.icon{
+  display: inline-block;
+}
 .el-row {
   padding: 10px;
 }

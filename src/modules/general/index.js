@@ -23,7 +23,7 @@ Vue.use(VueResouse);
 // Vue.mixin(mixin);
 
 /**注册-全局过滤器 */
-import Filters from "../filters"; // global filters
+import Filters from "filters"; // global filters
 //console.log(Filters);
 Vue.prototype.$filter = Filters;
 Object.keys(Filters).forEach(key => {
@@ -31,7 +31,7 @@ Object.keys(Filters).forEach(key => {
 });
 
 // 按需引入部分组件
-import Plugin from './plugins';
+import Plugin from 'plugins/element-ui';
 Plugin.component.forEach(comp => {
   Vue.component(comp.name, comp);
 });

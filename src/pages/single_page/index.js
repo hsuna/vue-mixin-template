@@ -1,4 +1,4 @@
-import Vue from 'modules/common/vue-common';
+import Vue from 'modules/general';
 
 /**添加-vue路由器 */
 import router from "./router";

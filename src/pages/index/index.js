@@ -1,4 +1,4 @@
-import Vue from 'modules/common/vue-common';
+import Vue from 'modules/general';
 import App from './App';
 
 /* eslint-disable no-new */

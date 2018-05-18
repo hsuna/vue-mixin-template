@@ -1,0 +1,26 @@
+/*
+* 移动端-响应式
+* author: Hsuna
+* version: v1.0
+*/
+
+$screenSizes: (320, 360, 375, 441, 481, 561, 641); // 通配手机尺寸
+
+/**
+ * 移动端动态计算
+ * @param $remUnit:20 rem比例
+ * @param $designSize:750 设计稿尺寸
+ */
+@mixin mobileResponsive($remUnit:20, $designSize: 750) {
+  @each $size in $screenSizes {
+    @media only screen and (min-width:#{$size}px) {
+      html {
+        font-size: $size/$designSize*$remUnit/16*100%;
+      }
+    }
+  }
+  html {
+    text-size-adjust: 100%;
+    font-size: 100*$remUnit/$designSize+vw;
+  }
+}

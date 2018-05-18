@@ -19,7 +19,8 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({ 
       sourceMap: config.dev.cssSourceMap, 
-      usePostCSS: true
+      px2remOption: config.common.px2remOption,
+      usePostCSS: true,
     })
   },
   // cheap-module-eval-source-map is faster for development
