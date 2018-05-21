@@ -105,7 +105,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     new webpack.optimize.ModuleConcatenationPlugin(),
     // split vendor js into its own file
     new webpack.optimize.CommonsChunkPlugin({
-      names: Object.keys(vendor.files).reverse(), //加载顺序要相反，别问我为什么
+      names: Object.keys(vendor.files).reverse(), //加载顺序要相反
       minChunks: Infinity
       // minChunks(module) {
       //   debugger;

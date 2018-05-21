@@ -1,4 +1,4 @@
-'use strict'
+﻿'use strict'
 const path = require('path')
 const config = require('../config');
 const vendor = require('../config/vendor');
@@ -132,7 +132,7 @@ exports.exits = (conf) => {
   return entryHtml.map(filePath => {
     let filename = path.basename(path.dirname(filePath));
     return Object.assign({
-      title: vendor.pages[filename].title || '3k游戏',
+      title: vendor.pages[filename].title || '默认标题',
       // 模板来源
       template: config.common.pagePath + '/index.html',
       // 文件名称
