@@ -47,7 +47,6 @@ exports.cssLoaders = function (options) {
     if (options.px2remOption) {
       loaders.push(px2remLoader);
     }
-
     if (loader) {
       loaders.push({
         loader: loader + '-loader',
@@ -183,7 +182,6 @@ exports.clearfiles = function (matchs = []) {
   return new CleanWebpackPlugin(matchs, {
     root: path.resolve(__dirname, '..'), //根目录
     verbose: false, //开启在控制台输出信息
-    dry: false,
-    　　　 //启用删除文件　　　　　　　 
+    dry: false, //启用删除文件
   });
 }
