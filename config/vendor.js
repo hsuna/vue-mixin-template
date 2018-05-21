@@ -10,13 +10,17 @@ module.exports = {
       title: '主页',
       vendor: ['vendor2']
     },
-    single_page: {
-      title: '单页面',
+    page1: {
+      title: '页面1',
+      vendor: ['vendor2']
+    },
+    page2: {
+      title: '页面2',
+      vendor: ['vendor2']
+    },
+    page3: {
+      title: '页面3',
       vendor: ['vendor1', 'vendor2']
     },
-    multiple_page: {
-      title: '多页面',
-      vendor: ['vendor2']
-    }
   }
 }

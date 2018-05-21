@@ -47,13 +47,15 @@
 ├── src
 │   └── pages                     // 建立需要生成html名的文件夹
 │       ├── index/
-│       ├── multiple_page/
-│       └── single_page/
+│       ├── page1/
+│       ├── page2/
+│       └── page3/
 │
 └── dist                         // 对应文件名的html
 │   ├── index.html
-│   ├── multiple_page.html
-│   └── single_page.html
+│   ├── page1.html
+│   ├── page2.html
+│   └── page3.html
 ```
 
 在文件夹内创建 index.js 和 App.vue，如下
@@ -96,7 +98,7 @@ export default {
 
 ```
 ./src/pages
-└── single_page
+└── page3
     ├── router                     // 路由表
     ├── views                      // 内嵌页面
     │   ├── page1.vue
@@ -128,7 +130,7 @@ const router = new VueRouter({
 });
 ```
 
-则生成出来的 single_page.html 就是一个单页面结构
+则生成出来的 page3.html 就是一个单页面结构
 
 * 分页面打包模块
 
@@ -157,17 +159,21 @@ module.exports = {
   },
   pages: {
     index: {
-      title: "主页",//页面的title
-      vendor: ["vendor2"]//页面的按需引入
+      title: '主页',
+      vendor: ['vendor2']
     },
-    single_page: {
-      title: "单页面",
-      vendor: ["vendor1", "vendor2"]//可以引入多个，也可以不引用
+    page1: {
+      title: '页面1',
+      vendor: ['vendor2']
     },
-    multiple_page: {
-      title: "多页面",
-      vendor: ["vendor2"]
-    }
+    page2: {
+      title: '页面2',
+      vendor: ['vendor2']
+    },
+    page3: {
+      title: '页面3',
+      vendor: ['vendor1', 'vendor2']
+    },
   }
 };
 ```

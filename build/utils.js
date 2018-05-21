@@ -132,7 +132,7 @@ exports.exits = (conf) => {
   return entryHtml.map(filePath => {
     let filename = path.basename(path.dirname(filePath));
     return Object.assign({
-      title: vendor.pages[filename] || '3k游戏',
+      title: vendor.pages[filename].title || '3k游戏',
       // 模板来源
       template: config.common.pagePath + '/index.html',
       // 文件名称
@@ -141,8 +141,8 @@ exports.exits = (conf) => {
       chunks: [
         'manifest',
         'vendor',
+        ...(vendor.pages[filename] && vendor.pages[filename].vendor || []),
         filename,
-        ...(vendor.pages[filename] && vendor.pages[filename].vendor || [])
       ]
     }, conf);
   });

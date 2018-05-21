@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <el-row>
-        <h1>这是一个单页面</h1>
+        <h1>这是单页面：page3</h1>
     </el-row>
     <el-row>
         <el-button type="primary" @click="$router.push({path:'page1'})">页面1</el-button>

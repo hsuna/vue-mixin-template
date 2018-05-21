@@ -96,7 +96,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         minifyCSS: true,
         minifyURLs: true,
       },
-      chunksSortMode: 'dependency'
+      chunksSortMode: 'manual'//手动排序
     }).map(conf => new HtmlWebpackPlugin(conf)),
 
     // keep module.id stable when vendor modules does not change

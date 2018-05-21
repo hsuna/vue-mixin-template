@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="el-row">
-      <h1>这是一个多页面，根据文件夹名生成页面</h1>
+      <h1>这是页面：page1</h1>
     </div>
   </div>
 </template>

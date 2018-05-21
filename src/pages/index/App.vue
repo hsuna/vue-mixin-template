@@ -4,8 +4,9 @@
       <h1>主页面</h1>
     </el-row>
     <el-row>
-        <el-button type="primary" @click="toPageByName('single_page')">跳转到单页面</el-button>
-        <el-button type="primary" @click="toPageByName('multiple_page')">跳转到多页面</el-button>
+        <el-button type="primary" @click="toPageByName('page1')">页面1</el-button>
+        <el-button type="primary" @click="toPageByName('page2')">页面2</el-button>
+        <el-button type="primary" @click="toPageByName('page3')">页面3-单页面</el-button>
     </el-row>
     <el-row>
       <i class="icon icon-success"></i>
