@@ -132,7 +132,11 @@ exports.exits = (conf) => {
   return entryHtml.map(filePath => {
     let filename = path.basename(path.dirname(filePath));
     return Object.assign({
+<<<<<<< HEAD
       title: vendor.pages[filename].title || '默认标题',
+=======
+      title: vendor.pages[filename].title || '3k游戏',
+>>>>>>> 4b0396717f96103cd6f940e06f5d75a4ddf14d0e
       // 模板来源
       template: config.common.pagePath + '/index.html',
       // 文件名称
