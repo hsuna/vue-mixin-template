@@ -1,8 +1,6 @@
 # vue-mixin-template
 
-基于 vue-cli 的混合页面模板
-
----
+> 基于 vue-cli 的混合页面模板
 
 ## 启动
 
@@ -211,7 +209,7 @@ Object.keys(Plugin.prototype).forEach(key => {
 });
 ```
 
-注意，一定要在.babelrc中，加上需要按需加载的模块，否则是不处理的，打包出来的文件还是整模块的。
+注意，一定要在.babelrc 中，加上需要按需加载的模块，否则是不处理的，打包出来的文件还是整模块的。
 
 ```
 /**.babelrc */
