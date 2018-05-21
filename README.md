@@ -6,7 +6,7 @@
 
 ## 启动
 
-1.  `git clone -b multiple-page-web https://github.com/hsuna/vue-hsuna-blog.git`
+1.  `git clone https://github.com/hsuna/vue-mixin-template.git`
 2.  安装依赖：`npm i`
 3.  开发：`npm run dev`
 4.  打包：`npm run build`
