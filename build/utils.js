@@ -1,10 +1,7 @@
 'use strict'
 const path = require('path')
 const config = require('../config');
-<<<<<<< HEAD
 const vendor = require('../config/vendor');
-=======
->>>>>>> ddf8f93690e1ad734e9eef3256becec8b2669b11
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const packageConfig = require('../package.json')
 const SpritesmithPlugin = require('webpack-spritesmith');
@@ -40,26 +37,16 @@ exports.cssLoaders = function (options) {
 
   const px2remLoader = {
     loader: 'px2rem-loader',
-<<<<<<< HEAD
     options: options.px2remOption
-=======
-    options: {
-      remUnit: 20
-    }
->>>>>>> ddf8f93690e1ad734e9eef3256becec8b2669b11
   }
 
   // generate loader string to be used with extract text plugin
   function generateLoaders(loader, loaderOptions) {
-<<<<<<< HEAD
     const loaders = options.usePostCSS ? [cssLoader, postcssLoader] : [cssLoader]
 
     if (options.px2remOption) {
       loaders.push(px2remLoader);
     }
-=======
-    const loaders = options.usePostCSS ? [cssLoader, postcssLoader, px2remLoader] : [cssLoader]
->>>>>>> ddf8f93690e1ad734e9eef3256becec8b2669b11
 
     if (loader) {
       loaders.push({
@@ -133,13 +120,7 @@ exports.createNotifierCallback = () => {
 // 多入口配置
 exports.entries = () => {
   let entryFiles = glob.sync(config.common.pagePath + '/*/*.js');
-<<<<<<< HEAD
   let map = Object.assign({}, vendor.files);
-=======
-  let map = {
-    vendor: ['vue', 'vue-resource'],
-  };
->>>>>>> ddf8f93690e1ad734e9eef3256becec8b2669b11
   entryFiles.forEach(filePath => {
     map[path.basename(path.dirname(filePath))] = filePath;
   })
@@ -152,26 +133,18 @@ exports.exits = (conf) => {
   return entryHtml.map(filePath => {
     let filename = path.basename(path.dirname(filePath));
     return Object.assign({
-<<<<<<< HEAD
       title: vendor.pages[filename] || '3k游戏',
-=======
-      title: config.common.pageTitle[filename] || '3k游戏',
->>>>>>> ddf8f93690e1ad734e9eef3256becec8b2669b11
       // 模板来源
       template: config.common.pagePath + '/index.html',
       // 文件名称
       filename: filename + '.html',
       // 页面模板需要加对应的js脚本，如果不加这行则每个页面都会引入所有的js脚本
-<<<<<<< HEAD
       chunks: [
         'manifest',
         'vendor',
         filename,
         ...(vendor.pages[filename] && vendor.pages[filename].vendor || [])
       ]
-=======
-      chunks: ['manifest', 'vendor', filename]
->>>>>>> ddf8f93690e1ad734e9eef3256becec8b2669b11
     }, conf);
   });
 }
@@ -209,13 +182,8 @@ exports.clearfiles = function (matchs = []) {
   ]
   return new CleanWebpackPlugin(matchs, {
     root: path.resolve(__dirname, '..'), //根目录
-<<<<<<< HEAD
     verbose: false, //开启在控制台输出信息
     dry: false,
     　　　 //启用删除文件　　　　　　　 
-=======
-    verbose: false,//开启在控制台输出信息
-    dry: false,　　　//启用删除文件　　　　　　　 
->>>>>>> ddf8f93690e1ad734e9eef3256becec8b2669b11
   });
 }
